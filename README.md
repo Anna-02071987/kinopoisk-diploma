@@ -56,3 +56,6 @@ flake8 .
 ✅ 5 API тестов
 
 ✅ Все тесты стабильно проходят
+
+## Ссылка на проект
+Репозиторий дипломной работы: [kinopoisk-diploma](https://github.com/Anna-02071987/kinopoisk-diploma)
