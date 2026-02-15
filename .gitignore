@@ -1,0 +1,15 @@
+# Папки с кэшем Python
+__pycache__/
+.pytest_cache/
+.vscode/
+
+# Файлы с чувствительными данными (мы создадим позже)
+.env
+
+# Отчеты Allure (они будут генерироваться при каждом запуске)
+allure-results/
+allure-report/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
