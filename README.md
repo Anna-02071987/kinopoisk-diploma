@@ -50,20 +50,16 @@ API_TOKEN=твой_токен
 ### Запуск тестов
 
 Запуск всех тестов
-
 pytest -v
 
 Запуск только UI тестов
-
 pytest -m ui -v
 
 Запуск только API тестов
-
 pytest -m api -v
 ```
 ```
 Запуск с отчетом Allure
-
 pytest --alluredir=allure-results
 allure serve allure-results
 ```
