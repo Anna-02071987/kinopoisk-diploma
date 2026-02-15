@@ -8,7 +8,16 @@ UI-тесты написаны с использованием Selenium и Page 
 API-тесты написаны с использованием requests.
 
 ## Технологии
-Python, Pytest, Selenium, Requests, Allure, Webdriver Manager, Flake8, Python-dotenv
+```
+Python
+Pytest
+Selenium
+Requests
+Allure
+Webdriver Manager
+Flake8
+Python-dotenv
+```
 
 ## Структура проекта
 - pages / main_page.py
@@ -47,6 +56,7 @@ pytest --alluredir=allure-results
 allure serve allure-results
 
 ## Проверка кода
+
 flake8 .
 
 ## Результаты
