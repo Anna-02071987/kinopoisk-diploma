@@ -13,7 +13,7 @@
 - Flake8
 
 ## Структура проекта
-
+```
 kinopoisk-diploma/
 ├── pages/ # Page Objects (для UI тестов)
 ├── tests/ # Тесты
@@ -23,7 +23,7 @@ kinopoisk-diploma/
 ├── pytest.ini # Конфигурация pytest
 ├── requirements.txt # Зависимости
 └── README.md # Описание проекта
-
+```
 
 ## Запуск тестов
 
