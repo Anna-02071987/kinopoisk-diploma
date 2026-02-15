@@ -38,11 +38,13 @@ kinopoisk-diploma/
 
 ```powershell
 $env:API_TOKEN="твой_токен"
+```
 
 ### Вариант 2 - через .env файл (постоянно):
 
 Создай файл `.env` в корне проекта и добавь:
 API_TOKEN=твой_токен
+```
 
 ### Запуск тестов
 
@@ -58,6 +60,7 @@ pytest -m api -v
 ### Запуск с отчетом Allure
 pytest --alluredir=allure-results
 allure serve allure-results
+
 
 ### Проверка кода (flake8)
 flake8 .
