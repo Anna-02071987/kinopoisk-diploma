@@ -45,7 +45,7 @@ $env:API_TOKEN="твой_токен"
 Создай файл `.env` в корне проекта и добавь:
 API_TOKEN=твой_токен
 ```
-
+```
 ### Запуск тестов
 
 Запуск всех тестов
@@ -56,14 +56,16 @@ pytest -m ui -v
 
 Запуск только API тестов
 pytest -m api -v
-
+```
+```
 ### Запуск с отчетом Allure
 pytest --alluredir=allure-results
 allure serve allure-results
-
-
+```
+```
 ### Проверка кода (flake8)
 flake8 .
+```
 
 Результаты
 ✅ 5 UI тестов
