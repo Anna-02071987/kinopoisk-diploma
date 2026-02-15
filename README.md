@@ -43,7 +43,7 @@ $env:API_TOKEN="RPGCR3Q-8MQMKD4-GKGK204-8QGES6A"
 
 Вариант 2 - через .env файл (постоянно):
 Создай файл .env в корне проекта и добавь:
-API_TOKEN=RPGCR3Q-8MQMKD4-GKGK204-8QGES6A
+$env:API_TOKEN="твой_токен"
 
 Запуск тестов
 Запуск всех тестов
