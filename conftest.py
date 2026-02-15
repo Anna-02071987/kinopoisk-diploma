@@ -5,6 +5,9 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Эта строчка загружает токен из .env файла
 
 
 def pytest_addoption(parser):
@@ -39,10 +42,12 @@ def api_timeout() -> int:
 
 @pytest.fixture(scope="session")
 def api_token() -> str:
-    """Токен для API запросов (берется из переменной окружения)"""
+    """Токен для API запросов (берется из .env файла)"""
     token = os.getenv("API_TOKEN")
     if not token:
-        pytest.fail("API_TOKEN не установлен в переменных окружения")
+        pytest.fail(
+            "API_TOKEN не найден! Проверь файл .env в корневой папке"
+        )
     return token
 
 
