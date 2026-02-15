@@ -38,8 +38,9 @@ kinopoisk-diploma/
 pip install -r requirements.txt
 
 Настройка API токена
-Вариант 1 - через переменную окружения (временно):
-$env:API_TOKEN="RPGCR3Q-8MQMKD4-GKGK204-8QGES6A"
+### Вариант 1 - через переменную окружения (временно):
+```powershell
+$env:API_TOKEN="твой_токен"
 
 ### Вариант 2 - через .env файл (постоянно):
 Создай файл `.env` в корне проекта и добавь:
