@@ -1,6 +1,9 @@
 import allure
 import pytest
+from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from pages.main_page import MainPage
 
 
@@ -29,9 +32,8 @@ def test_ui_02_search_field_present(
         main_page = MainPage(driver)
         main_page.open(ui_base_url)
 
-    with allure.step("Проверяем, что поле поиска существует"):
-        main_page.wait_loaded()
-        assert main_page.SEARCH_INPUT is not None
+    with allure.step("Проверяем, что поле поиска существует на странице"):
+        assert main_page.is_search_input_present() is True
 
 
 @allure.story("UI тесты")
@@ -63,6 +65,15 @@ def test_ui_04_open_movie_from_results(
         main_page.wait_results()
         first_link = main_page.results()[0]
         first_link.click()
+
+    # Добавляем небольшое ожидание, чтобы страница успела загрузиться
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.TAG_NAME, "body"))
+    )
+
+    # Выводим заголовок страницы в консоль для отладки
+    page_title = driver.title
+    print(f"\n[DEBUG] Заголовок страницы после клика: {page_title}")
 
     with allure.step("Проверяем, что URL содержит /film/"):
         assert "/film/" in driver.current_url

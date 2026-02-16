@@ -41,3 +41,12 @@ class MainPage:
 
     def results(self) -> List[WebElement]:
         return self.driver.find_elements(*self.FILM_LINKS)
+
+    def is_search_input_present(self, timeout: int = 30) -> bool:
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                EC.presence_of_element_located(self.SEARCH_INPUT)
+            )
+            return True
+        except Exception:
+            return False
