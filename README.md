@@ -1,81 +1,61 @@
 # Дипломный проект: Автоматизация тестирования Кинопоиск (UI + API)
 
-**Ссылка на проект:** [kinopoisk-diploma](https://github.com/Anna-02071987/kinopoisk-diploma)
+Ссылка на проект: https://github.com/Anna-02071987/kinopoisk-diploma
 
 ## Описание проекта
-Проект представляет собой автоматизированные тесты для веб-приложения Кинопоиск. Реализованы UI-тесты (Selenium) и API-тесты (requests) с использованием Page Object паттерна.
+Автоматизированные тесты для веб-приложения Кинопоиск.  
+UI-тесты написаны с использованием Selenium и Page Object.  
+API-тесты написаны с использованием requests.
 
 ## Технологии
-- Python 3.14
-- Pytest
-- Selenium
-- Requests
-- Allure Reports
-- Webdriver Manager
-- Flake8
-- Python-dotenv
+Python, Pytest, Selenium, Requests, Allure, Webdriver Manager, Flake8, Python-dotenv
 
 ## Структура проекта
+- pages / main_page.py
+- tests / test_api.py, test_ui.py
+- .env (токен, не в Git)
+- .flake8
+- .gitignore
+- conftest.py
+- pytest.ini
+- requirements.txt
+- README.md
 
-```
-kinopoisk-diploma/
-├── pages/ # Page Objects
-│ └── main_page.py
-├── tests/ # Тесты
-│ ├── test_api.py
-│ └── test_ui.py
-├── .env # Токен (не в Git)
-├── .flake8 # Настройки flake8
-├── .gitignore # Игнорируемые файлы
-├── conftest.py # Фикстуры
-├── pytest.ini # Конфигурация pytest
-├── requirements.txt # Зависимости
-└── README.md # Описание проекта
-```
-### Настройка API токена
+## Установка зависимостей
+pip install -r requirements.txt
 
-### Вариант 1 - через переменную окружения (временно):
-
-```powershell
+## Настройка API токена
+Вариант 1 — через переменную окружения (временно):
 $env:API_TOKEN="твой_токен"
-```
 
-### Вариант 2 - через .env файл (постоянно):
-
-Создай файл `.env` в корне проекта и добавь:
+Вариант 2 — через .env файл (постоянно):
+Создай файл .env и добавь строку:
 API_TOKEN=твой_токен
-```
-```
-### Запуск тестов
 
-Запуск всех тестов
+## Запуск тестов
+Все тесты:
 pytest -v
 
-Запуск только UI тестов
+Только UI:
 pytest -m ui -v
 
-Запуск только API тестов
+Только API:
 pytest -m api -v
-```
-```
-### Запуск с отчетом Allure
+
+Allure отчёт:
 pytest --alluredir=allure-results
 allure serve allure-results
-```
-```
-### Проверка кода (flake8)
+
+## Проверка кода
 flake8 .
-```
 
-Результаты
-✅ 5 UI тестов
-✅ 5 API тестов
-✅ Page Object паттерн
-✅ Allure отчеты
-✅ Чистый код (flake8)
-✅ Все тесты стабильно проходят
+## Результаты
+- 5 UI тестов
+- 5 API тестов
+- Page Object паттерн
+- Allure отчёты
+- Чистый код (flake8)
+- Тесты стабильны
 
-```
-### Вывод
-Дипломный проект выполнен в полном соответствии с требованиями. Автоматизированные тесты покрывают как UI, так и API функциональность Кинопоиска. Код соответствует стандартам PEP8, стабильно проходит при многократном запуске.
-```
+## Вывод
+Дипломный проект выполнен в соответствии с требованиями. Тесты покрывают UI и API Кинопоиска.
