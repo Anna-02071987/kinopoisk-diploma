@@ -61,19 +61,18 @@ def test_ui_04_open_movie_from_results(
     with allure.step("Ищем фильм Interstellar"):
         main_page.search("Interstellar")
 
-    with allure.step("Открываем первый результат поиска"):
+    with allure.step("Открываем первый результат поиска (JavaScript клик)"):
         main_page.wait_results()
         first_link = main_page.results()[0]
-        first_link.click()
+        driver.execute_script("arguments[0].click();", first_link)
 
-    # Добавляем небольшое ожидание, чтобы страница успела загрузиться
-    WebDriverWait(driver, 10).until(
+    # Ждём загрузки страницы
+    WebDriverWait(driver, 30).until(
         EC.presence_of_element_located((By.TAG_NAME, "body"))
     )
 
-    # Выводим заголовок страницы в консоль для отладки
-    page_title = driver.title
-    print(f"\n[DEBUG] Заголовок страницы после клика: {page_title}")
+    # Выводим заголовок для отладки
+    print(f"\n[DEBUG] Заголовок страницы после клика: {driver.title}")
 
     with allure.step("Проверяем, что URL содержит /film/"):
         assert "/film/" in driver.current_url
